@@ -1,0 +1,17 @@
+<div *ngIf="user">  
+    <div class="details-container">
+        <h1>Détails de l'utilisateur</h1>
+        <img [src]="user.image" alt="{{ user.firstName }} {{ user.lastName }}" class="user-image"/>
+        <h2>{{user.username}}</h2>
+        <p><strong>First Name:</strong> {{user.firstName}}</p>
+        <p><strong>Last Name:</strong> {{user.lastName}}</p>
+        <p><strong>Age:</strong> {{user.age}}</p>
+        <p><strong>Birth Date:</strong> {{user.birthDate}}</p>
+        <p><strong>Email:</strong> {{user.email}}</p>
+        <p><strong>Phone:</strong> {{user.phone}}</p>
+        <p><strong>Adresse:</strong> {{user.address.address}}, {{user.address.city}}, {{user.address.state}}, {{user.address.postalCode}}</p>
+        <p><strong>Company:</strong> {{user.company.name}} - {{user.company.title}}</p>
+        <p><strong>Role:</strong> {{user.role}}</p>
+        <button>Liste des posts</button>
+    </div>
+</div>

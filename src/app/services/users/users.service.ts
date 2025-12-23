@@ -19,4 +19,10 @@ export class UsersService {
       .then(data => data.users);
   }
 
+  getUserById(id: number){
+    return fetch(`https://dummyjson.com/users/${id}`)
+      .then(response => response.json())
+      .then(data => data);
+    }
+
 }

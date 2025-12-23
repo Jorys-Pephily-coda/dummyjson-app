@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UsersService } from '../services/users/users.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -10,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './users.component.css'
 })
 export class UsersComponent {
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService, private router: Router) { }
 
   users: any[] = [];
 
@@ -20,6 +21,10 @@ export class UsersComponent {
         this.users.push(user);
       }
     });
+  }
+
+  onUserClick(userid: number) {
+    this.router.navigate(['/details', userid]);
   }
 
 }

@@ -1,0 +1,20 @@
+.main-container {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.user-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    display: inline-block;
+    width: 200px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.user-card:hover {
+    background-color: rgba(255, 255, 0, 0.477);
+    transform: rotate(2deg);
+}
