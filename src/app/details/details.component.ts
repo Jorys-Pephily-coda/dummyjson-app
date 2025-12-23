@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UsersService } from '../services/users/users.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -11,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './details.component.css'
 })
 export class DetailsComponent {
-  constructor(private usersService: UsersService, private route: ActivatedRoute) { }
+  constructor(private usersService: UsersService, private route: ActivatedRoute, private router: Router) { }
 
   user: any = null;
   ngOnInit() {
@@ -20,6 +21,10 @@ export class DetailsComponent {
       this.user = data;
       console.log(this.user);
     });
+  }
+
+  onClick(){
+    this.router.navigate(['/posts', this.user.id]); 
   }
 
 }

@@ -20,10 +20,11 @@ export class UsersComponent {
       for (let user of users) {
         this.users.push(user);
       }
+      console.log(this.users);
     });
   }
 
-  onUserClick(userid: number) {
+  onClick(userid: number) {
     this.router.navigate(['/details', userid]);
   }
 

@@ -2,7 +2,7 @@
     <div class="header">
         <h1>Liste des utilisateurs</h1>
     </div>
-    <div *ngFor="let user of users"(click)="onUserClick(user.id)" class="user-card">
+    <div *ngFor="let user of users"(click)="onClick(user.id)" class="user-card">
         <img [src]="user.image" alt="{{ user.firstName }} {{ user.lastName }}" class="user-image"/>
         <h2>{{user.username}}</h2>
     </div>

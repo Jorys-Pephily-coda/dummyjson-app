@@ -25,4 +25,10 @@ export class UsersService {
       .then(data => data);
     }
 
+  getUserPosts(userId: number){
+    return fetch(`https://dummyjson.com/users/${userId}/posts`)
+      .then(response => response.json())
+      .then(data => data.posts);
+  }
+
 }
