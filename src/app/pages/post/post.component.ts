@@ -22,9 +22,11 @@ export class PostComponent {
   post: any = null;
 
   ngOnInit() {
-    const postId = Number(this.route.snapshot.paramMap.get("id"));
-    this.postsService.getPostById(postId).then((post) => {
-      this.post = post;
+    this.route.queryParams.subscribe((params) => {
+      const postId = Number(params["id"]);
+      this.postsService.getPostById(postId).then((post) => {
+        this.post = post;
+      });
     });
   }
 

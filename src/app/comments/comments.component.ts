@@ -22,12 +22,13 @@ export class CommentsComponent {
   postId: number = 0;
 
   ngOnInit() {
-    const postId = Number(this.route.snapshot.paramMap.get("id"));
-    this.postId = postId;
-    this.commentsService.getCommentsByPostId(postId).then((comments) => {
-      for (let comment of comments) {
-        this.comments.push(comment);
-      }
+    this.route.queryParams.subscribe((params) => {
+      const postId = Number(params["id"]);
+      this.commentsService.getCommentsByPostId(postId).then((comments) => {
+        for (let comment of comments) {
+          this.comments.push(comment);
+        }
+      });
     });
   }
 
