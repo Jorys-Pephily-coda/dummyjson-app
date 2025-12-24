@@ -24,7 +24,7 @@ export class DetailsComponent {
   }
 
   onClick(){
-    this.router.navigate(['/posts', this.user.id]); 
+    this.router.navigate(['/posts/user', this.user.id]); 
   }
 
 }
