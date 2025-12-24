@@ -27,9 +27,9 @@ export class PostsComponent {
   }
 
   RedirectToUserDetails(userid: number) {
-    this.router.navigate(["/details", userid]);
+    this.router.navigate(["/details"], { queryParams: { id: userid } });
   }
   RedirectToPostDetails(postid: number) {
-    this.router.navigate(["/post", postid]);
+    this.router.navigate(["/post"], { queryParams: { id: postid } });
   }
 }
