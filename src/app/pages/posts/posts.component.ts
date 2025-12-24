@@ -23,7 +23,6 @@ export class PostsComponent {
       for (let post of posts) {
         this.posts.push(post);
       }
-      console.log(this.posts);
     });
   }
 

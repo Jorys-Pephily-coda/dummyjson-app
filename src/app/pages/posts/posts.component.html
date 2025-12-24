@@ -2,7 +2,7 @@
   <div class="header">
     <h1>Liste des Posts</h1>
   </div>
-  <div *ngFor="let post of posts" (click)="onClick(post.id)" class="post-card">
+  <div *ngFor="let post of posts" class="post-card">
     <h2>{{ post.title }}</h2>
     <div class="post-content">
       <div class="post-tags">

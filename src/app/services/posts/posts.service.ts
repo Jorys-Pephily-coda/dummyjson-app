@@ -17,4 +17,9 @@ export class PostsService {
       .then((response) => response.json())
       .then((data) => data);
   }
+  getCommentsByPostId(id: number) {
+    return fetch(`https://dummyjson.com/post/${id}/comments`)
+      .then((response) => response.json())
+      .then((data) => data.comments);
+  }
 }
