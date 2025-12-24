@@ -26,7 +26,10 @@ export class PostsComponent {
     });
   }
 
-  onClick(userid: number) {
+  RedirectToUserDetails(userid: number) {
     this.router.navigate(["/details", userid]);
+  }
+  RedirectToPostDetails(postid: number) {
+    this.router.navigate(["/post", postid]);
   }
 }
