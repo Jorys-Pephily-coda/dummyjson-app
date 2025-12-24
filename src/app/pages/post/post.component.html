@@ -1,19 +1,21 @@
 <div class="main-container">
   <div class="header">
-    <h1>Post</h1>
+    <h1>Post de {{ post?.user?.username }}</h1>
     <!-- Utilise ?. pour user -->
   </div>
-  <h2>{{ post.title }}</h2>
-  <p>{{ post.body }}</p>
+  <h2>{{ post?.title }}</h2>
+  <p>{{ post?.body }}</p>
   <div class="post-content">
     <div class="post-tags">
       <span *ngFor="let tag of post.tags" class="tag">{{ tag }}</span>
     </div>
     <div class="posts-analytics">
-      <p>Likes : {{ post.reactions.likes }}</p>
-      <p>Dislikes : {{ post.reactions.dislikes }}</p>
-      <p>Views : {{ post.views }}</p>
-      <button (click)="onClick(post.user.id)">user</button>
+      <p>Likes : {{ post?.reactions?.likes }}</p>
+      <p>Dislikes : {{ post?.reactions?.dislikes }}</p>
+      <p>Views : {{ post?.views }}</p>
+      <button (click)="onClick(post.user.id)">
+        user : {{ post?.user?.username }}
+      </button>
     </div>
     <app-comments></app-comments>
   </div>
