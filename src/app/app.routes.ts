@@ -5,6 +5,7 @@ import { PostUserComponent } from "./post-user/post-user.component";
 import { PostsComponent } from "./pages/posts/posts.component";
 import { PostComponent } from "./pages/post/post.component";
 import { HomeComponent } from "./home/home.component";
+import { ListProductsComponent } from "./products/list-products/list-products.component";
 
 export const routes: Routes = [
   { path: "", component: HomeComponent},
@@ -13,4 +14,5 @@ export const routes: Routes = [
   { path: "posts/user", component: PostUserComponent },
   { path: "posts", component: PostsComponent },
   { path: "post", component: PostComponent },
+  { path: "products", component: ListProductsComponent },
 ];

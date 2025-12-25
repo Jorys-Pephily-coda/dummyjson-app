@@ -18,4 +18,7 @@ export class HomeComponent {
     this.router.navigate(['/posts']);
   }
 
+  redirectToProducts() {
+    this.router.navigate(['/products']);
+  }
 }
