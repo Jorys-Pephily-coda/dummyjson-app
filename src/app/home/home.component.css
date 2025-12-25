@@ -1,0 +1,29 @@
+
+.home-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.link-card{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+.link-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
