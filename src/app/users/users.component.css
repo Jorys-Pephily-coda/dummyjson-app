@@ -1,20 +1,63 @@
 .main-container {
-    width: 100%;
-    margin: auto;
-    text-align: center;
+  width: 100%;
+  margin: auto;
+  text-align: center;
 }
 .user-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 16px;
-    display: inline-block;
-    width: 200px;
-    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  display: inline-block;
+  width: 200px;
+
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.3s ease;
 }
+
 .user-card:hover {
-    background-color: rgba(255, 255, 0, 0.477);
-    transform: rotate(2deg);
+  background-color: rgba(204, 158, 182, 0.477);
+  transform: rotate(2deg);
+}
+
+.user-card:active {
+  transform: scale(0.98);
+}
+.user-card:active::after {
+  animation: ripple 0.4s ease-out;
+}
+
+.user-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(20);
+    opacity: 0;
+  }
 }

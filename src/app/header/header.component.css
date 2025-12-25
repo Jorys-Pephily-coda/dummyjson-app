@@ -16,3 +16,15 @@
   align-items: center;
   justify-content: space-evenly;
 }
+
+.header li {
+  padding: 0px 10px;
+  border-radius: 15px;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.3s ease;
+}
+.header li:hover {
+  background-color: rgba(189, 139, 131, 0.477);
+}
