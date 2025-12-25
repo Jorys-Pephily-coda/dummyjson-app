@@ -23,7 +23,7 @@ export class UsersComponent {
   }
 
   onClick(userid: number) {
-    this.router.navigate(['/details', userid]);
+    this.router.navigate(['/details'], { queryParams: { userId: userid } });
   }
 
 }

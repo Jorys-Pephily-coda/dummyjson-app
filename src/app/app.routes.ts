@@ -9,8 +9,8 @@ import { HomeComponent } from "./home/home.component";
 export const routes: Routes = [
   { path: "", component: HomeComponent},
   { path: "users", component: UsersComponent },
-  { path: "details/:id", component: DetailsComponent },
-  { path: "posts/user/:userId", component: PostUserComponent },
+  { path: "details", component: DetailsComponent },
+  { path: "posts/user", component: PostUserComponent },
   { path: "posts", component: PostsComponent },
   { path: "post", component: PostComponent },
 ];

@@ -16,14 +16,16 @@ export class DetailsComponent {
 
   user: any = null;
   ngOnInit() {
-    const userId = Number(this.route.snapshot.paramMap.get('id'));
-    this.usersService.getUserById(userId).subscribe((data: any) => {
-      this.user = data;
+    this.route.queryParams.subscribe((params) => {
+      const userId = Number(params['userId']);
+      this.usersService.getUserById(userId).subscribe((data: any) => {
+        this.user = data;
+      });
     });
   }
 
   onClick(){
-    this.router.navigate(['/posts/user', this.user.id]); 
+    this.router.navigate(['/posts/user'], { queryParams: { userId: this.user.id } }); 
   }
 
 }
