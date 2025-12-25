@@ -22,4 +22,8 @@ export class ListProductsComponent {
     });
   }
 
+  redirectToProductDetails(productId: number) {
+    this.router.navigate(['/product'], { queryParams: { id: productId } });
+  }
+
 }

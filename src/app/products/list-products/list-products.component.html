@@ -1,13 +1,13 @@
 <div class="main-container">
     <div class="header">
-        <div></div>
+        <div class="blank"></div>
         <h1>Liste des produits</h1>
         <button class="add-product-button">Ajouter un produit</button>
     </div>
     <div class="card-container">
-        <div *ngFor="let product of products" class="product-card">
+        <div *ngFor="let product of products" (click)="redirectToProductDetails(product.id)" class="product-card">
+            <img [src]="product.images[0]" alt="{{ product.title }}" class="product-image"/>
             <h3>{{ product.title }}</h3>
-            <p>{{ product.description }}</p>
             <p>Price: {{ product.price }} USD</p>
         </div>
     </div>
