@@ -17,9 +17,8 @@ export class DetailsComponent {
   user: any = null;
   ngOnInit() {
     const userId = Number(this.route.snapshot.paramMap.get('id'));
-    this.usersService.getUserById(userId).then(data => {
+    this.usersService.getUserById(userId).subscribe((data: any) => {
       this.user = data;
-      console.log(this.user);
     });
   }
 

@@ -19,7 +19,8 @@ export class PostsComponent {
   posts: any[] = [];
 
   ngOnInit() {
-    this.postsService.getAllPosts().then((posts) => {
+    this.postsService.getAllPosts().subscribe((posts) => {
+      this.posts = [];
       for (let post of posts) {
         this.posts.push(post);
       }

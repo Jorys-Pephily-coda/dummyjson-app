@@ -17,7 +17,8 @@ export class PostUserComponent {
 
   ngOnInit() {
     const userId = Number(this.route.snapshot.paramMap.get('userId'));
-    this.usersService.getUserPosts(userId).then(data => {
+    
+    this.usersService.getUserPosts(userId).subscribe((data: any) => {
       for (let post of data) {
         this.posts.push(post);
       }

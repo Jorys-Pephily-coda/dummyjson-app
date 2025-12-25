@@ -1,34 +1,27 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  testApi() {
-    fetch('https://dummyjson.com/test')
-      .then(response => response.json())
-      .then(data => console.log(data));
-  }
 
   getAllUsers(){
-    return fetch('https://dummyjson.com/users')
-      .then(response => response.json())
-      .then(data => data.users);
+    return this.http.get<any>('https://dummyjson.com/users');
   }
 
   getUserById(id: number){
-    return fetch(`https://dummyjson.com/users/${id}`)
-      .then(response => response.json())
-      .then(data => data);
-    }
+    return this.http.get<any>(`https://dummyjson.com/users/${id}`);
+  }
 
   getUserPosts(userId: number){
-    return fetch(`https://dummyjson.com/users/${userId}/posts`)
-      .then(response => response.json())
-      .then(data => data.posts);
+    return this.http
+      .get<any>(`https://dummyjson.com/users/${userId}/posts`)
+      .pipe(map(res => res.posts as any[]));
   }
 
 }

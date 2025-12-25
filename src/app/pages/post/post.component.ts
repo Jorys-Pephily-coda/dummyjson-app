@@ -24,7 +24,7 @@ export class PostComponent {
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
       const postId = Number(params["id"]);
-      this.postsService.getPostById(postId).then((post) => {
+      this.postsService.getPostById(postId).subscribe((post) => {
         this.post = post;
       });
     });

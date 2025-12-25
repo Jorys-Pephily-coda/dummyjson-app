@@ -16,10 +16,8 @@ export class UsersComponent {
   users: any[] = [];
 
   ngOnInit() {
-    this.usersService.getAllUsers().then(users => {
-      for (let user of users) {
-        this.users.push(user);
-      }
+    this.usersService.getAllUsers().subscribe((data: any) => {
+      this.users = data.users;
       console.log(this.users);
     });
   }

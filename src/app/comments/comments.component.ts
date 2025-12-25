@@ -24,9 +24,11 @@ export class CommentsComponent {
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
       const postId = Number(params["id"]);
-      this.commentsService.getCommentsByPostId(postId).then((comments) => {
+      this.commentsService.getCommentsByPostId(postId).subscribe((comments) => {
+        this.comments = [];
         for (let comment of comments) {
           this.comments.push(comment);
+          console.log(comment);
         }
       });
     });

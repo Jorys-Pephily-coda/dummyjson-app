@@ -4,8 +4,10 @@ import { DetailsComponent } from "./details/details.component";
 import { PostUserComponent } from "./post-user/post-user.component";
 import { PostsComponent } from "./pages/posts/posts.component";
 import { PostComponent } from "./pages/post/post.component";
+import { HomeComponent } from "./home/home.component";
 
 export const routes: Routes = [
+  { path: "", component: HomeComponent},
   { path: "users", component: UsersComponent },
   { path: "details/:id", component: DetailsComponent },
   { path: "posts/user/:userId", component: PostUserComponent },

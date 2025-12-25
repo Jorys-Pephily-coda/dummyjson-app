@@ -1,53 +1,41 @@
 import { Injectable } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { forkJoin, Observable } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class PostsService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  async getAllPosts() {
-    const response = await fetch("https://dummyjson.com/posts");
-    const json = await response.json();
-
-    const postsWithUsers = await Promise.all(
-      json.posts.map(async (post: any) => {
-        const userResponse = await fetch(
-          `https://dummyjson.com/users/${post.userId}`,
+  getAllPosts(): Observable<any[]> {
+    return this.http.get<any>('https://dummyjson.com/posts').pipe(
+      switchMap(res => {
+        const posts = res.posts as any[];
+        const observables = posts.map(post =>
+          this.http.get<any>(`https://dummyjson.com/users/${post.userId}`).pipe(
+            map(user => ({ ...post, user }))
+          )
         );
-        const user = await userResponse.json();
-        console.log(user);
-
-        return {
-          ...post,
-          user,
-        };
-      }),
+        return observables.length ? forkJoin(observables) : (new Observable<any[]>(subscriber => { subscriber.next([]); subscriber.complete(); }));
+      })
     );
-
-    console.log(postsWithUsers);
-
-    return postsWithUsers;
   }
 
-  async getPostById(id: number) {
-    const postResponse = await fetch(`https://dummyjson.com/posts/${id}`);
-    const post = await postResponse.json();
-
-    const userResponse = await fetch(
-      `https://dummyjson.com/users/${post.userId}`,
+  getPostById(id: number): Observable<any> {
+    return this.http.get<any>(`https://dummyjson.com/posts/${id}`).pipe(
+      switchMap(post =>
+        this.http.get<any>(`https://dummyjson.com/users/${post.userId}`).pipe(
+          map(user => ({ ...post, user }))
+        )
+      )
     );
-    const user = await userResponse.json();
-
-    return {
-      ...post,
-      user,
-    };
   }
 
-  getCommentsByPostId(id: number) {
-    return fetch(`https://dummyjson.com/post/${id}/comments`)
-      .then((response) => response.json())
-      .then((data) => data.comments);
+  getCommentsByPostId(id: number): Observable<any[]> {
+    return this.http.get<any>(`https://dummyjson.com/post/${id}/comments`).pipe(
+      map(res => res.comments as any[])
+    );
   }
 }
