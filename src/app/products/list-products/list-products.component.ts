@@ -18,6 +18,7 @@ export class ListProductsComponent {
   ngOnInit() {
     this.productsService.getAllProducts().subscribe((data: any) => {
       this.products = data.products;
+      console.log(this.products);
     });
   }
 
