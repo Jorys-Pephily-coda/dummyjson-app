@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header nav {
+  flex: 1;
+}
+
+.header ul {
+  list-style-type: none;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.header li {
+  padding: 0px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.3s ease;
+}
+.header li:hover {
+  background-color: rgba(189, 139, 131, 0.477);
+}

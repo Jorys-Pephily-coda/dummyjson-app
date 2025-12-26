@@ -1,0 +1,28 @@
+<div class="main-container">
+  <div class="header">
+    <h1>Liste des Posts</h1>
+  </div>
+  <div
+    *ngFor="let post of posts"
+    class="post-card"
+    (click)="RedirectToPostDetails(post.id)"
+  >
+    <h2>{{ post.title }}</h2>
+    <div class="post-content">
+      <div class="post-tags">
+        <span *ngFor="let tag of post.tags" class="tag">{{ tag }}</span>
+      </div>
+      <div class="posts-analytics">
+        <p>Likes : {{ post.reactions.likes }}</p>
+        <p>Dislikes : {{ post.reactions.dislikes }}</p>
+        <p>Views : {{ post.views }}</p>
+        <button
+          class="btn btn-secondary"
+          (click)="RedirectToUserDetails(post.user.id)"
+        >
+          {{ post?.user?.username }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

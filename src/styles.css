@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root{
+    --primary: #6277ac;
+    --secondary: #cc9eb6;
+    --accent: #bd8b83;
+    --background: #f2f4f8;
+    --text-color: #080a0f;
+    --danger: #cc4b5f;
+    --primary-hover: #0056b3;
+    --danger-hover: #a8001e;
+    --secondary-hover: #b36c7e;
+    --accent-hover: #9e6a5a;
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--background);
+}
+
+button, .btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  transition: background-color 0.3s ease;
+}
+
+
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  transition: background-color 0.3s ease;
+}
+.btn-danger:hover {
+  background-color: var(--danger-hover);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-hover);
+}
+
+
+.form-title {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2px;
+    width: 80%;
+}
+
+.form-text {
+    width: 70%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.area{
+    height: 100px;
+    resize: vertical;
+}

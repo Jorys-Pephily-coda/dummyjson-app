@@ -1,0 +1,17 @@
+<div class="main-container">
+    <div class="header">
+        <h1>Détails du produit</h1>
+    </div>
+    <div class="product-detail-card" *ngIf="product">
+        <div class="button-layout">
+            <button class="btn btn-danger" (click)="deleteProduct()">Delete</button>
+            <button class="btn btn-secondary" (click)="redirectToEditProduct(product.id)">Edit</button>
+        </div>
+        <img [src]="product.images[0]" alt="{{ product.title }}" class="product-image"/>
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.description }}</p>
+        <p>Price: {{ product.price }} USD</p>
+        <p>Brand: {{ product.brand }}</p>
+        <p>Category: {{ product.category }}</p>
+    </div>
+</div>

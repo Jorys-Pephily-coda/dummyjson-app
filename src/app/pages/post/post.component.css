@@ -1,0 +1,39 @@
+.main-container {
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.post-content{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+    width: 400px;
+    background-color: var(--bs-light);
+    transition : box-shadow 0.3s ease;
+}
+
+.post-content:hover {
+    box-shadow: 4px 4px 16px rgba(0,0,0,0.2);
+}
+
+.post-tags {
+    margin-top: 12px;
+}
+
+.posts-analytics{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    
+}
