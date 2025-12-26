@@ -13,10 +13,12 @@
         <span *ngFor="let tag of post.tags" class="tag">{{ tag }}</span>
       </div>
       <div class="posts-analytics">
+        <h4 (click)="RedirectToUserDetails(post.user.id)">
+          {{ post?.user?.username }}
+        </h4>
         <p>Likes : {{ post.reactions.likes }}</p>
         <p>Dislikes : {{ post.reactions.dislikes }}</p>
         <p>Views : {{ post.views }}</p>
-        <button (click)="RedirectToUserDetails(post.user.id)">user</button>
       </div>
     </div>
   </div>

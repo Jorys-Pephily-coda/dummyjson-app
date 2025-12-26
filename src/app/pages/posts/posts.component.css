@@ -6,6 +6,7 @@
 .post-card {
   border: 1px solid #ccc;
   border-radius: 8px;
+  background-color: #bd8b83;
   padding: 16px;
   margin: 16px;
   display: inline-block;
@@ -16,6 +17,12 @@
     background-color 0.3s ease,
     transform 0.3s ease;
 }
+
+.post-card:hover {
+  background-color: rgba(98, 119, 172, 0.477);
+  transform: scale(1.05);
+}
+
 .post-tags {
   flex: 100%;
   display: flex;
@@ -23,9 +30,33 @@
   justify-content: center;
 }
 .tag {
-  background-color: #6f0685;
-  color: #ffffff;
+  background-color: #cc9eb6;
+  color: #000;
   border-radius: 100px;
   padding: 4px 8px;
   margin: 4px;
+}
+.posts-analytics {
+  flex: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.post-card h4 {
+  background-color: #122a67;
+  color: #fff;
+  border-radius: 100px;
+  padding: 4px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+.post-card h4:hover {
+  background-color: rgba(189, 139, 131, 0.477);
+  color: #fff;
+  transform: scale(2);
 }
