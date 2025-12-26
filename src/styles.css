@@ -4,7 +4,7 @@ body {
   background-color: #f2f4f8;
 }
 
-button {
+.btn {
   cursor: pointer;
   padding: 10px 20px;
   border: none;
@@ -15,6 +15,38 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+.btn:hover {
   background-color: #0056b3;
+}
+
+.btn-danger {
+  background-color: #cc4b5f;
+}
+.btn-danger:hover {
+  background-color: #a8001e;
+}
+
+
+.form-title {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2px;
+    width: 80%;
+}
+
+.form-text {
+    width: 70%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.area{
+    height: 100px;
+    resize: vertical;
 }

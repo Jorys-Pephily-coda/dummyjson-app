@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsService } from '../../services/products/products.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detail-product',
@@ -11,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './detail-product.component.css'
 })
 export class DetailProductComponent {
-  constructor(private productsService: ProductsService, private route: ActivatedRoute) { }
+  constructor(private productsService: ProductsService, private route: ActivatedRoute, private router: Router) { }
 
   product: any = null;
   ngOnInit() {
@@ -33,4 +34,10 @@ export class DetailProductComponent {
     }
   }
 
+
+  redirectToEditProduct(productId: number) {
+    this.router.navigate(['/products/edit'], { queryParams: { id: productId } });
+  }
+
+  
 }

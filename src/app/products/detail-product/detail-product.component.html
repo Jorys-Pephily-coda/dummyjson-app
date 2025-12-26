@@ -4,8 +4,8 @@
     </div>
     <div class="product-detail-card" *ngIf="product">
         <div class="button-layout">
-            <button>Delete</button>
-            <button>Edit</button>
+            <button class="btn btn-danger" (click)="deleteProduct()">Delete</button>
+            <button class="btn" (click)="redirectToEditProduct(product.id)">Edit</button>
         </div>
         <img [src]="product.images[0]" alt="{{ product.title }}" class="product-image"/>
         <h2>{{ product.title }}</h2>
