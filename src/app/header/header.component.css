@@ -20,6 +20,7 @@
 .header li {
   padding: 0px 10px;
   border-radius: 15px;
+  cursor: pointer;
 
   transition:
     background-color 0.2s ease,
