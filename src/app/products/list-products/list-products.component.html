@@ -2,10 +2,14 @@
     <div class="header">
         <div class="blank"></div>
         <h1>Liste des produits</h1>
-        <button class="add-product-button">Ajouter un produit</button>
+        <button class="add-product-button" (click)="redirectToAddProduct()">Ajouter un produit</button>
     </div>
     <div class="card-container">
         <div *ngFor="let product of products" (click)="redirectToProductDetails(product.id)" class="product-card">
+            <div class="btn-layout">
+                <button (click)="deleteProduct(product.id); $event.stopPropagation();">Delete</button>
+                <button (click)="redirectToEditProduct(product.id); $event.stopPropagation();">Edit</button>
+            </div>
             <img [src]="product.images[0]" alt="{{ product.title }}" class="product-image"/>
             <h3>{{ product.title }}</h3>
             <p>Price: {{ product.price }} USD</p>

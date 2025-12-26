@@ -17,4 +17,16 @@ export class ProductsService {
     return this.http.get<any>(`https://dummyjson.com/products/${id}`);
   }
 
+  deleteProductById(id: number){
+    return this.http.delete<any>(`https://dummyjson.com/products/${id}`);
+  }
+
+  addProduct(product: any){
+    return this.http.post<any>('https://dummyjson.com/products/add', product);
+  }
+
+  updateProduct(id: number, product: any){
+    return this.http.put<any>(`https://dummyjson.com/products/${id}`, product);
+  }
+
 }

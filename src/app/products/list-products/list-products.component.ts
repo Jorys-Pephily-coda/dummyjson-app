@@ -22,8 +22,25 @@ export class ListProductsComponent {
     });
   }
 
+  deleteProduct(productId: number) {
+    if(confirm('vous etes sur de vouloir supprimer ce produit ?')) {
+      this.productsService.deleteProductById(productId).subscribe(() => {
+        this.products = this.products.filter(product => product.id !== productId);
+        console.log(`Product with id ${productId} deleted.`);
+      });
+    }
+  }
+
   redirectToProductDetails(productId: number) {
     this.router.navigate(['/product'], { queryParams: { id: productId } });
+  }
+
+  redirectToAddProduct() {
+    this.router.navigate(['/products/add']);
+  }
+
+  redirectToEditProduct(productId: number) {
+    this.router.navigate(['/products/edit'], { queryParams: { id: productId } });
   }
 
 }

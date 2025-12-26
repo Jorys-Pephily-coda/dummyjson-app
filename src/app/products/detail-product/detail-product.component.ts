@@ -24,4 +24,13 @@ export class DetailProductComponent {
     });
   }
 
+  deleteProduct() {
+    if (this.product && this.product.id) {
+      this.productsService.deleteProductById(this.product.id).subscribe(() => {
+        alert(`Le produit avec l'id ${this.product.id} a été supprimé avec succès !`);
+        this.product = null;
+      });
+    }
+  }
+
 }
