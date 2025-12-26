@@ -1,7 +1,7 @@
 <div class="main-container">
   <div *ngFor="let comment of comments" class="comment-card">
     <div class="comment-content">
-      <button (click)="onClick(comment.user.id)">
+      <button class="btn btn-secondary" (click)="onClick(comment.user.id)">
         user : {{ comment.user.username }}
       </button>
       <h3>{{ comment.body }}</h3>

@@ -1,4 +1,4 @@
-<div *ngIf="user">
+<div class="main-container" *ngIf="user">
   <div class="details-container">
     <div class="header">
       <h1>Détails de l'utilisateur</h1>
@@ -28,7 +28,7 @@
         {{ user.company.title }}
       </p>
       <p><strong>Role:</strong> {{ user.role }}</p>
-      <button (click)="onClick()">Liste des posts</button>
+      <button class="btn btn-secondary" (click)="onClick()">Liste des posts</button>
     </div>
   </div>
 </div>

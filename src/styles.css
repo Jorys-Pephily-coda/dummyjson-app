@@ -1,29 +1,59 @@
+
+:root{
+    --primary: #6277ac;
+    --secondary: #cc9eb6;
+    --accent: #bd8b83;
+    --background: #f2f4f8;
+    --text-color: #080a0f;
+    --danger: #cc4b5f;
+    --primary-hover: #0056b3;
+    --danger-hover: #a8001e;
+    --secondary-hover: #b36c7e;
+    --accent-hover: #9e6a5a;
+}
+
+
 body {
   display: flex;
   justify-content: center;
-  background-color: #f2f4f8;
+  background-color: var(--background);
 }
 
-.btn {
+button, .btn {
   cursor: pointer;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #6277ac;
-  color: white;
   font-size: 16px;
+  color: var(--text-color);
+}
+
+.btn-primary {
+  background-color: var(--primary);
   transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #0056b3;
+
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
 }
 
 .btn-danger {
-  background-color: #cc4b5f;
+  background-color: var(--danger);
+  transition: background-color 0.3s ease;
 }
 .btn-danger:hover {
-  background-color: #a8001e;
+  background-color: var(--danger-hover);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-hover);
 }
 
 
