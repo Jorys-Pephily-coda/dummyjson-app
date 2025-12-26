@@ -11,12 +11,17 @@
   border-radius: 8px;
   padding: 16px;
   margin: 16px;
-  width: 500px;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
+}
+
+.comment-card:hover {
+  background-color: var(--bs-light);
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .comment-content {
