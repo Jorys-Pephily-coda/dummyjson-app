@@ -28,4 +28,8 @@ export class PostUserComponent {
     });
   }
 
+  redirectToPost(postId: number) {
+    this.router.navigate(['/post'], { queryParams: { id: postId } });
+  }
+
 }
